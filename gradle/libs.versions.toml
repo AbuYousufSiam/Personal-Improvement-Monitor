@@ -36,3 +36,4 @@ firebase-inappmessaging = { group = "com.google.firebase", name = "firebase-inap
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 
+
