@@ -33,6 +33,8 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material.v170)
     implementation(libs.constraintlayout)
+    implementation(libs.recyclerview)
+    implementation(libs.firebase.inappmessaging)
 
     // Add JUnit dependency for unit testing
     testImplementation(libs.junit)
