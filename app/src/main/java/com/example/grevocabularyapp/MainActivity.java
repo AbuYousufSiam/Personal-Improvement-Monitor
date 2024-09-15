@@ -1,61 +1,82 @@
 package com.example.grevocabularyapp;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-import java.util.List;
+import android.view.MenuItem;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private WordAdapter adapter;
-    private MyDatabaseHelper dbHelper;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle toggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize RecyclerView
-        recyclerView = findViewById(R.id.wordRecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // Set up the toolbar
+        setSupportActionBar(findViewById(R.id.toolbar));
 
-        // Initialize the database helper
-        dbHelper = new MyDatabaseHelper(this);
+        // Set up the drawer layout
+        drawerLayout = findViewById(R.id.drawer_layout);
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // Fetch words from the database and set them in the RecyclerView
-        loadWordsFromDatabase();
-
-        // Initialize the "Add Word" button
-        Button openAddWordActivityButton = findViewById(R.id.openAddWordActivityButton);
-
-        // Set a click listener to open AddWordActivity
-        openAddWordActivityButton.setOnClickListener(new View.OnClickListener() {
+        // Set up navigation view listener
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                // Start the AddWordActivity when the button is clicked
-                Intent intent = new Intent(MainActivity.this, AddWordActivity.class);
-                startActivity(intent);
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.nav_home) {
+                    // Handle home action
+                } else if (item.getItemId() == R.id.nav_notifications) {
+                    // Handle notifications action
+                } else if (item.getItemId() == R.id.nav_explore) {
+                    // Handle explore action
+                } else if (item.getItemId() == R.id.nav_profile) {
+                    // Handle profile action
+                }
+
+                drawerLayout.closeDrawers(); // Close the drawer after selection
+                return true;
+            }
+        });
+
+        // Set up bottom navigation view listener
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.action_home) {
+                    // Handle home action
+                } else if (item.getItemId() == R.id.action_notifications) {
+                    // Handle notifications action
+                } else if (item.getItemId() == R.id.action_explore) {
+                    // Handle explore action
+                } else if (item.getItemId() == R.id.action_profile) {
+                    // Handle profile action
+                }
+
+                return true;
             }
         });
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        // Reload the word list whenever the activity is resumed (after adding new words)
-        loadWordsFromDatabase();
-    }
-
-    // Method to load words from the database and set them to the RecyclerView
-    private void loadWordsFromDatabase() {
-        List<Word> wordList = dbHelper.getAllWords();  // Fetch all words from the database
-        adapter = new WordAdapter(wordList);  // Create a new adapter with the word list
-        recyclerView.setAdapter(adapter);  // Set the adapter to the RecyclerView
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
