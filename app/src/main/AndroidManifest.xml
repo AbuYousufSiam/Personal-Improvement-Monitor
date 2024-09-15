@@ -18,6 +18,16 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".QuizActivity" />
+
+        <activity android:name=".DailyChallengeActivity" />
+
+        <activity android:name=".AddWordActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".AboutActivity" />
+
+
     </application>
 
 </manifest>

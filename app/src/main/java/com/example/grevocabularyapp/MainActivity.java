@@ -4,11 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -56,6 +56,22 @@ public class MainActivity extends AppCompatActivity {
                 return handleBottomNavigationItemSelected(item); // Call method to handle selection
             }
         });
+
+        // Set up button listeners
+        findViewById(R.id.btn_add_word).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, AddWordActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.btn_start_quiz).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, QuizActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.btn_daily_challenge).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DailyChallengeActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override
@@ -75,16 +91,17 @@ public class MainActivity extends AppCompatActivity {
             bottomNavigationView.setSelectedItemId(R.id.action_explore);
         } else if (item.getItemId() == R.id.nav_profile) {
             bottomNavigationView.setSelectedItemId(R.id.action_profile);
+        } else if (item.getItemId() == R.id.nav_add_word) {
+            startActivity(new Intent(MainActivity.this, AddWordActivity.class));
         } else if (item.getItemId() == R.id.nav_settings) {
-            // Handle settings action
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
         } else if (item.getItemId() == R.id.nav_help) {
-            // Handle help action
+            startActivity(new Intent(MainActivity.this, HelpActivity.class));
         } else if (item.getItemId() == R.id.nav_about) {
-            // Handle about action
+            startActivity(new Intent(MainActivity.this, AboutActivity.class));
         }
         return true;
     }
-
 
     private boolean handleBottomNavigationItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_home) {

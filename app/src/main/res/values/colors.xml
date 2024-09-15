@@ -1,5 +1,9 @@
 <resources>
     <!-- Deep Green Colors -->
+    <color name="colorPrimary">#009688</color> <!-- Change this color code as needed -->
+    <color name="colorPrimaryDark">#00796B</color> <!-- Change this color code as needed -->
+    <color name="colorAccent">#4CAF50</color> <!-- Change this color code as needed -->
+
     <color name="deep_green">#004d00</color>
     <color name="forest_green">#228B22</color>
     <color name="olive_drab">#6b8e23</color>

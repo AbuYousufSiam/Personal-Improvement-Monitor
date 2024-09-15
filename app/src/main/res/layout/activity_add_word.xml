@@ -1,26 +1,30 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/wordEditText"
+        android:id="@+id/editTextWord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:hint="Enter Word" />
+        android:hint="Word" />
 
     <EditText
-        android:id="@+id/meaningEditText"
+        android:id="@+id/editTextMeaning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Meaning" />
+        android:hint="Meaning"
+        android:layout_below="@id/editTextWord"
+        android:layout_marginTop="16dp" />
 
     <Button
-        android:id="@+id/addWordButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/buttonAddWord"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Word"
-        android:layout_gravity="center" />
-</LinearLayout>
+        android:layout_below="@id/editTextMeaning"
+        android:layout_marginTop="16dp"
+        android:onClick="addWord" />
+
+</RelativeLayout>

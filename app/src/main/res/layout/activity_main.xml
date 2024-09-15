@@ -10,37 +10,60 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/background_white">
+        android:layout_height="match_parent">
 
         <!-- Toolbar -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/deep_green"
+            android:background="?attr/colorPrimary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:layout_constraintTop_toTopOf="parent" />
 
         <!-- Main content layout -->
-        <FrameLayout
-            android:id="@+id/content_frame"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="56dp"
+            android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:layout_constraintBottom_toTopOf="@id/bottom_navigation" />
+            app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+            android:padding="16dp">
+
+            <!-- Add Word Button -->
+            <Button
+                android:id="@+id/btn_add_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Word" />
+
+            <Button
+                android:id="@+id/btn_start_quiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Quiz" />
+
+            <Button
+                android:id="@+id/btn_daily_challenge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daily Challenge" />
+
+
+        </LinearLayout>
 
         <!-- Bottom Navigation View -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/background_white"
+            android:background="@android:color/white"
             app:menu="@menu/bottom_navigation_menu"
-            app:itemIconTint="@color/deep_green"
-            app:itemTextColor="@color/deep_green"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:itemIconTint="@color/colorAccent"
+        app:itemTextColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
