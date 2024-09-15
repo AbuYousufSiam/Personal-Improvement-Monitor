@@ -75,9 +75,16 @@ public class MainActivity extends AppCompatActivity {
             bottomNavigationView.setSelectedItemId(R.id.action_explore);
         } else if (item.getItemId() == R.id.nav_profile) {
             bottomNavigationView.setSelectedItemId(R.id.action_profile);
+        } else if (item.getItemId() == R.id.nav_settings) {
+            // Handle settings action
+        } else if (item.getItemId() == R.id.nav_help) {
+            // Handle help action
+        } else if (item.getItemId() == R.id.nav_about) {
+            // Handle about action
         }
         return true;
     }
+
 
     private boolean handleBottomNavigationItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_home) {
