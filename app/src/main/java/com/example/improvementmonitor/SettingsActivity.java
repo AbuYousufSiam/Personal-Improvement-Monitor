@@ -1,7 +1,9 @@
-package com.example.grevocabularyapp;
+package com.example.improvementmonitor;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.grevocabularyapp.R;
 
 public class SettingsActivity extends AppCompatActivity {
     @Override

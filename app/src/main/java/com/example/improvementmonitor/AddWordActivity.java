@@ -1,10 +1,12 @@
-package com.example.grevocabularyapp;
+package com.example.improvementmonitor;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.grevocabularyapp.R;
 
 public class AddWordActivity extends AppCompatActivity {
 
