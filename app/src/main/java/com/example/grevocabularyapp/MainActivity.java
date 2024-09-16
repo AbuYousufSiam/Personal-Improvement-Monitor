@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Set up button listeners
+        /*
         findViewById(R.id.btn_add_word).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AddWordActivity.class);
             startActivity(intent);
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, DailyChallengeActivity.class);
             startActivity(intent);
         });
+         */
     }
 
     @Override
