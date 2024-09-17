@@ -111,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
             // Handle explore action
         } else if (item.getItemId() == R.id.action_profile) {
             // Handle profile action
-        } else if (item.getItemId()== R.id.home_scroll_view){
         }
         return true;
     }
