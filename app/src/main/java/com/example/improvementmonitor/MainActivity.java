@@ -3,6 +3,7 @@ package com.example.improvementmonitor;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         final ScrollView scrollView = findViewById(R.id.home_scroll_view);
+        // Find the Task Management CardView
+        CardView cardTaskManagement = findViewById(R.id.card_task_management);
 
         // Set up the toolbar
         setSupportActionBar(findViewById(R.id.toolbar));
@@ -70,6 +73,16 @@ public class MainActivity extends AppCompatActivity {
                 return true; // Return true to indicate that the item was selected
             }
         });
+
+        // Set an onClickListener on the Task Management CardView
+        cardTaskManagement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Open Task Management Activity when clicked
+                Intent intent = new Intent(MainActivity.this, TaskManagementActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -79,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
 
     private boolean handleNavigationItemSelected(MenuItem item) {
@@ -114,4 +128,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
+
 }
