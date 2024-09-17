@@ -25,23 +25,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="56dp"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
-            android:padding="16dp">
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
 
             <ScrollView
+                android:id="@+id/home_scroll_view"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp">
+                android:layout_height="655dp"
+                android:layout_marginTop="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-<!--                    These are the options in grid layout -->
+                    <!--                    These are the options in grid layout -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -50,17 +50,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="15dp"
                             android:layout_marginEnd="7.5dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -70,39 +70,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_task"/>
+                                            android:src="@drawable/ic_task" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
                                             android:text="Task Management"
-                                            android:layout_marginTop="10dp"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -115,17 +115,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="7.5dp"
                             android:layout_marginEnd="15dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -135,39 +135,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_expense_tracker"/>
+                                            android:src="@drawable/ic_expense_tracker" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
                                             android:text="Expense Tracker"
-                                            android:layout_marginTop="10dp"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -178,6 +178,7 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -187,17 +188,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="15dp"
                             android:layout_marginEnd="7.5dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -207,39 +208,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_habit_tracker"/>
+                                            android:src="@drawable/ic_habit_tracker" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
                                             android:text="Habit Tracker"
-                                            android:layout_marginTop="10dp"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -252,17 +253,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="7.5dp"
                             android:layout_marginEnd="15dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -272,39 +273,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_study_planner"/>
+                                            android:src="@drawable/ic_study_planner" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
                                             android:text="Study Planner"
-                                            android:layout_marginTop="10dp"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -315,6 +316,7 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -324,17 +326,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="15dp"
                             android:layout_marginEnd="7.5dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -344,39 +346,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_weather"/>
+                                            android:src="@drawable/ic_weather" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
                                             android:text="Weather App"
-                                            android:layout_marginTop="10dp"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -389,17 +391,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="7.5dp"
                             android:layout_marginEnd="15dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -409,39 +411,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_qr_code"/>
+                                            android:src="@drawable/ic_qr_code" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
                                             android:text="QR Code Scanner \nand Generator"
-                                            android:layout_marginTop="10dp"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -452,6 +454,7 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -461,17 +464,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="15dp"
                             android:layout_marginEnd="7.5dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -481,39 +484,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_event_countdown"/>
+                                            android:src="@drawable/ic_event_countdown" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
                                             android:text="Event Countdown Timer"
-                                            android:layout_marginTop="10dp"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -526,17 +529,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="7.5dp"
                             android:layout_marginEnd="15dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -546,39 +549,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_tuition_planner"/>
+                                            android:src="@drawable/ic_tuition_planner" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
                                             android:text="Tuition Planner"
-                                            android:layout_marginTop="10dp"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -589,6 +592,7 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -598,17 +602,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="15dp"
                             android:layout_marginEnd="7.5dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -618,39 +622,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications"/>
+                                            android:src="@drawable/ic_notifications" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Calendar"
                                             android:layout_marginTop="10dp"
+                                            android:text="Calendar"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -663,17 +667,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="7.5dp"
                             android:layout_marginEnd="15dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -683,39 +687,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications"/>
+                                            android:src="@drawable/ic_notifications" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Calendar"
                                             android:layout_marginTop="10dp"
+                                            android:text="Calendar"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -726,6 +730,7 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -735,17 +740,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="15dp"
                             android:layout_marginEnd="7.5dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -755,39 +760,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications"/>
+                                            android:src="@drawable/ic_notifications" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Calendar"
                                             android:layout_marginTop="10dp"
+                                            android:text="Calendar"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -800,17 +805,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginLeft="7.5dp"
                             android:layout_marginEnd="15dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -820,39 +825,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications"/>
+                                            android:src="@drawable/ic_notifications" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Calendar"
                                             android:layout_marginTop="10dp"
+                                            android:text="Calendar"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -863,6 +868,7 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -872,17 +878,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="15dp"
                             android:layout_marginEnd="7.5dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -892,39 +898,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications"/>
+                                            android:src="@drawable/ic_notifications" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Calendar"
                                             android:layout_marginTop="10dp"
+                                            android:text="Calendar"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -937,17 +943,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="7.5dp"
                             android:layout_marginEnd="15dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -957,39 +963,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications"/>
+                                            android:src="@drawable/ic_notifications" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Calendar"
                                             android:layout_marginTop="10dp"
+                                            android:text="Calendar"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
@@ -1000,6 +1006,7 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1009,17 +1016,17 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:layout_marginStart="15dp"
                             android:layout_marginEnd="7.5dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
+                                android:elevation="0dp"
+                                app:cardCornerRadius="10dp">
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
@@ -1029,39 +1036,39 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                         <ImageView
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications"/>
+                                            android:src="@drawable/ic_notifications" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Calendar"
                                             android:layout_marginTop="10dp"
+                                            android:text="Calendar"
                                             android:textColor="#595858"
-                                            android:textSize="14sp"/>
+                                            android:textSize="14sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="March, Friday"
                                             android:layout_marginTop="2dp"
+                                            android:text="March, Friday"
                                             android:textColor="#595858"
-                                            android:textSize="12sp"/>
+                                            android:textSize="12sp" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="3 Events"
-                                            android:textSize="12sp"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:textColor="#595858"/>
+                                            android:text="3 Events"
+                                            android:textColor="#595858"
+                                            android:textSize="12sp" />
 
                                     </LinearLayout>
 
