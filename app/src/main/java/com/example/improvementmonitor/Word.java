@@ -1,4 +1,4 @@
-package com.example.grevocabularyapp;
+package com.example.improvementmonitor;
 
 public class Word {
     private String word;

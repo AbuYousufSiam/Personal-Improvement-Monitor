@@ -1,4 +1,4 @@
-package com.example.grevocabularyapp;
+package com.example.improvementmonitor;
 
 import android.content.ContentValues;
 import android.content.Context;

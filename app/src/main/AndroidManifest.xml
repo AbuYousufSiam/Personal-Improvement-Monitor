@@ -1,5 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.grevocabularyapp">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -10,13 +9,23 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <!-- Main Activity -->
-        <activity android:name=".MainActivity"
+        <activity android:name="com.example.improvementmonitor.MainActivity"
             android:exported="true"> <!-- Add this line -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name="com.example.improvementmonitor.QuizActivity" />
+
+        <activity android:name="com.example.improvementmonitor.DailyChallengeActivity" />
+
+        <activity android:name="com.example.improvementmonitor.AddWordActivity" />
+        <activity android:name="com.example.improvementmonitor.SettingsActivity" />
+        <activity android:name="com.example.improvementmonitor.HelpActivity" />
+        <activity android:name="com.example.improvementmonitor.AboutActivity" />
+
 
     </application>
 
