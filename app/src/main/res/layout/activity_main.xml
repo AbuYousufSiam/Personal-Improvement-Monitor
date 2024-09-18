@@ -630,13 +630,13 @@
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications" />
+                                            android:src="@drawable/ic_calculator" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="10dp"
-                                            android:text="Calendar"
+                                            android:text="Calculator"
                                             android:textColor="#595858"
                                             android:textSize="14sp" />
 
