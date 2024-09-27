@@ -93,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-
     private boolean handleNavigationItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.nav_home) {
             bottomNavigationView.setSelectedItemId(R.id.home_scroll_view_action);
@@ -128,6 +126,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-
 
 }

@@ -37,8 +37,7 @@ dependencies {
     implementation(libs.firebase.inappmessaging)
     implementation(libs.support.annotations)
     implementation(libs.material)
-
-
+    implementation(libs.drawerlayout)
 
 
     // Add JUnit dependency for unit testing
