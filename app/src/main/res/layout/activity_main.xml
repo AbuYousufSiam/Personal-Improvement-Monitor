@@ -695,13 +695,13 @@
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications" />
+                                            android:src="@drawable/ic_alarm_clock" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="10dp"
-                                            android:text="Alarm Clock"
+                                            android:text="@string/alarm_clock"
                                             android:textColor="#595858"
                                             android:textSize="14sp" />
 
@@ -768,7 +768,7 @@
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications" />
+                                            android:src="@drawable/ic_repositories" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
@@ -833,7 +833,7 @@
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications" />
+                                            android:src="@drawable/ic_recycle" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
@@ -906,13 +906,13 @@
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications" />
+                                            android:src="@drawable/ic_mess_management" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="10dp"
-                                            android:text="Mess Management"
+                                            android:text="@string/mess_management"
                                             android:textColor="#595858"
                                             android:textSize="14sp" />
 
@@ -971,13 +971,13 @@
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications" />
+                                            android:src="@drawable/ic_search_all" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="10dp"
-                                            android:text="Search"
+                                            android:text="@string/search"
                                             android:textColor="#595858"
                                             android:textSize="14sp" />
 
@@ -1044,13 +1044,13 @@
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications" />
+                                            android:src="@drawable/ic_timer_pomodoro" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="10dp"
-                                            android:text="Pomodoro"
+                                            android:text="@string/pomodoro"
                                             android:textColor="#595858"
                                             android:textSize="14sp" />
 
@@ -1058,7 +1058,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="2dp"
-                                            android:text="Forest: Focus for Productivity"
+                                            android:text="@string/forest_f"
                                             android:textColor="#595858"
                                             android:textSize="12sp" />
 
@@ -1109,13 +1109,13 @@
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications" />
+                                            android:src="@drawable/ic_vocabulary" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="10dp"
-                                            android:text="My Vocabulary"
+                                            android:text="@string/my_vocabulary"
                                             android:textColor="#595858"
                                             android:textSize="14sp" />
 
@@ -1123,7 +1123,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="2dp"
-                                            android:text="in my own way"
+                                            android:text="@string/in_my_own_way"
                                             android:textColor="#595858"
                                             android:textSize="12sp" />
 
@@ -1183,13 +1183,13 @@
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications" />
+                                            android:src="@drawable/ic_secure_messaging" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="10dp"
-                                            android:text="Secure Messaging"
+                                            android:text="@string/secure_messaging"
                                             android:textColor="#595858"
                                             android:textSize="14sp" />
 

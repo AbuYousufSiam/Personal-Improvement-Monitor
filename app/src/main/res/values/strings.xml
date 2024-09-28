@@ -11,5 +11,13 @@
     <string name="notifications">Notifications</string>
     <string name="home">Home</string>
     <string name="task_management">Task Management</string>
+    <string name="alarm_clock">Alarm Clock</string>
+    <string name="mess_management">Mess Management</string>
+    <string name="search">Search</string>
+    <string name="pomodoro">Pomodoro</string>
+    <string name="forest_f">Forest: Focus for Productivity</string>
+    <string name="my_vocabulary">My Vocabulary</string>
+    <string name="in_my_own_way">in my own way</string>
+    <string name="secure_messaging">Secure Messaging</string>
 </resources>
 
