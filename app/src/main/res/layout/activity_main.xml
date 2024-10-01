@@ -636,7 +636,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="10dp"
-                                            android:text="Calculator"
+                                            android:text="@string/calculator"
                                             android:textColor="#595858"
                                             android:textSize="14sp" />
 
@@ -644,7 +644,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="2dp"
-                                            android:text="March, Friday"
+                                            android:text="@string/march_friday"
                                             android:textColor="#595858"
                                             android:textSize="12sp" />
 
@@ -653,7 +653,7 @@
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:text="3 Events"
+                                            android:text="@string/_3_events"
                                             android:textColor="#595858"
                                             android:textSize="12sp" />
 
