@@ -1248,13 +1248,13 @@
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_notifications" />
+                                            android:src="@drawable/ic_pdf_document_icon" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="10dp"
-                                            android:text="##########"
+                                            android:text="My Ebook Collection"
                                             android:textColor="#595858"
                                             android:textSize="14sp" />
 
@@ -1262,7 +1262,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="2dp"
-                                            android:text="March, Friday"
+                                            android:text="Google Drive Library"
                                             android:textColor="#595858"
                                             android:textSize="12sp" />
 
