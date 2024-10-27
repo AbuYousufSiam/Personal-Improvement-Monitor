@@ -16,6 +16,12 @@ import com.example.grevocabularyapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
+//Transitions and Fade in out Animation Imports
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.View;
+
+
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         // Initialize UI elements
         drawerLayout = findViewById(R.id.drawer_layout);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+        // Load animations
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        Animation fadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+
         final ScrollView scrollView = findViewById(R.id.home_scroll_view);
         // Find the Task Management CardView
         CardView cardTaskManagement = findViewById(R.id.card_task_management);
@@ -69,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
                     // Hide the ScrollView for other options
                     scrollView.setVisibility(View.GONE);
                 }
+//              For fading out the current navbar in this same activity
+//                bottomNavigationView.startAnimation(fadeOut);
+//                bottomNavigationView.setVisibility(View.GONE);
+//              For fading in the current navbar but different option in this same activity
+//                bottomNavigationView.startAnimation(fadeIn);
+//                bottomNavigationView.setVisibility(View.VISIBLE);
 
                 return true; // Return true to indicate that the item was selected
             }
@@ -78,9 +94,7 @@ public class MainActivity extends AppCompatActivity {
         cardTaskManagement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Open Task Management Activity when clicked
-                Intent intent = new Intent(MainActivity.this, TaskManagementActivity.class);
-                startActivity(intent);
+                navigateToTaskManagement();
             }
         });
     }
@@ -127,4 +141,43 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    private void navigateToTaskManagement() {
+
+        // Trigger fade-out animation if needed
+        View bottomNavMainAc = findViewById(R.id.bottom_navigation);
+        Animation fadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+        bottomNavMainAc.startAnimation(fadeOut);
+        fadeOut.setAnimationListener(new Animation.AnimationListener() {
+            public void onAnimationStart(Animation animation) {}
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+            bottomNavMainAc.setVisibility(View.GONE);
+
+            // Start TaskManagementActivity with a fade transition
+            Intent intent = new Intent(MainActivity.this, TaskManagementActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        }
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+
+
+
+        });
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Get BottomNavigationView and make it visible with a fade-in animation
+        View bottomNavMainAc = findViewById(R.id.bottom_navigation);
+        bottomNavMainAc.setVisibility(View.VISIBLE); // Ensure visibility is set to VISIBLE
+
+        // Apply fade-in animation
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        bottomNavMainAc.startAnimation(fadeIn);
+    }
 }

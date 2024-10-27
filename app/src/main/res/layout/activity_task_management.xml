@@ -17,7 +17,7 @@
     <!-- Add your task management widgets here -->
 
 
-        <!-- Bottom Navigation View -->
+        <!-- Bottom Navigation View other pages excluding home page-->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation_other_pages"
             android:layout_width="match_parent"
