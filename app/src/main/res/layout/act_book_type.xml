@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    android:padding="8dp"
+    android:radius="8dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/book_type_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="@string/str_image_of_book_type"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_profile"
+        android:padding="4dp"
+        android:layout_margin="4dp"
+        />
+
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/book_type_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/str_book_type"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:textAllCaps="false"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_book_type_description"
+            android:textSize="12sp"
+            android:textAllCaps="false"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <ImageView
+                android:id="@+id/icon1_ac_bk_type"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:padding="4dp"
+                android:layout_margin="4dp"
+                android:contentDescription="@string/insert_icon_here"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_profile"/>
+
+            <ImageView
+                android:id="@+id/icon2_ac_bk_type"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:padding="4dp"
+                android:layout_margin="4dp"
+                android:contentDescription="@string/insert_icon_here"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_profile"/>
+
+            <ImageView
+                android:id="@+id/icon3_ac_bk_type"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:padding="4dp"
+                android:layout_margin="4dp"
+                android:contentDescription="@string/insert_icon_here"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_profile"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+</androidx.cardview.widget.CardView>

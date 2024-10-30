@@ -39,7 +39,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.drawerlayout)
 
-
     // Add JUnit dependency for unit testing
     testImplementation(libs.junit)
 

@@ -43,8 +43,12 @@ public class MainActivity extends AppCompatActivity {
         Animation fadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
 
         final ScrollView scrollView = findViewById(R.id.home_scroll_view);
+
+        // CardViews all objects in main layout
         // Find the Task Management CardView
         CardView cardTaskManagement = findViewById(R.id.card_task_management);
+        // Find the Ebook Collection Activity CardView
+        CardView ebookCollection_activity = findViewById(R.id.card_ebook_collection);
 
         // Set up the toolbar
         setSupportActionBar(findViewById(R.id.toolbar));
@@ -82,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 //              For fading out the current navbar in this same activity
 //                bottomNavigationView.startAnimation(fadeOut);
 //                bottomNavigationView.setVisibility(View.GONE);
-//              For fading in the current navbar but different option in this same activity
+//                For fading in the current navbar but different option in this same activity
 //                bottomNavigationView.startAnimation(fadeIn);
 //                bottomNavigationView.setVisibility(View.VISIBLE);
 
@@ -95,6 +99,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 navigateToTaskManagement();
+            }
+        });
+
+        // Set an onClickListener on the EbookCollectionActivity CardView
+        ebookCollection_activity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigateToEbookCollectionActivity();
             }
         });
     }
@@ -162,9 +174,36 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAnimationRepeat(Animation animation) {}
 
-
-
         });
+
+    }
+
+    private void navigateToEbookCollectionActivity() {
+
+        Intent intent = new Intent(MainActivity.this, EbookCollectionActivity.class);
+        startActivity(intent);
+
+
+//        // Trigger fade-out animation if needed
+//        View bottomNavMainAc = findViewById(R.id.bottom_navigation);
+//        Animation fadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+//        bottomNavMainAc.startAnimation(fadeOut);
+//        fadeOut.setAnimationListener(new Animation.AnimationListener() {
+//            public void onAnimationStart(Animation animation) {}
+//
+//            @Override
+//            public void onAnimationEnd(Animation animation) {
+//                bottomNavMainAc.setVisibility(View.GONE);
+//
+//                // Start EbookCollectionActivity with a fade transition
+//                Intent intent = new Intent(MainActivity.this, EbookCollectionActivity.class);
+//                startActivity(intent);
+//                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+//            }
+//            @Override
+//            public void onAnimationRepeat(Animation animation) {}
+//
+//        });
 
     }
 
