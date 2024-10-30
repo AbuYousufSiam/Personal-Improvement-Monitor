@@ -26,6 +26,7 @@
         <activity android:name="com.example.improvementmonitor.HelpActivity" />
         <activity android:name="com.example.improvementmonitor.AboutActivity" />
         <activity android:name="com.example.improvementmonitor.TaskManagementActivity" />
+        <activity android:name="com.example.improvementmonitor.EbookCollectionActivity" />
 
 
     </application>

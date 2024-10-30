@@ -155,26 +155,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void navigateToTaskManagement() {
 
-        // Trigger fade-out animation if needed
-        View bottomNavMainAc = findViewById(R.id.bottom_navigation);
-        Animation fadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
-        bottomNavMainAc.startAnimation(fadeOut);
-        fadeOut.setAnimationListener(new Animation.AnimationListener() {
-            public void onAnimationStart(Animation animation) {}
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-            bottomNavMainAc.setVisibility(View.GONE);
-
-            // Start TaskManagementActivity with a fade transition
-            Intent intent = new Intent(MainActivity.this, TaskManagementActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        }
-            @Override
-            public void onAnimationRepeat(Animation animation) {}
-
-        });
+        Intent intent = new Intent(MainActivity.this, TaskManagementActivity.class);
+        startActivity(intent);
 
     }
 
@@ -182,28 +164,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(MainActivity.this, EbookCollectionActivity.class);
         startActivity(intent);
-
-
-//        // Trigger fade-out animation if needed
-//        View bottomNavMainAc = findViewById(R.id.bottom_navigation);
-//        Animation fadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
-//        bottomNavMainAc.startAnimation(fadeOut);
-//        fadeOut.setAnimationListener(new Animation.AnimationListener() {
-//            public void onAnimationStart(Animation animation) {}
-//
-//            @Override
-//            public void onAnimationEnd(Animation animation) {
-//                bottomNavMainAc.setVisibility(View.GONE);
-//
-//                // Start EbookCollectionActivity with a fade transition
-//                Intent intent = new Intent(MainActivity.this, EbookCollectionActivity.class);
-//                startActivity(intent);
-//                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-//            }
-//            @Override
-//            public void onAnimationRepeat(Animation animation) {}
-//
-//        });
+        overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
 
     }
 

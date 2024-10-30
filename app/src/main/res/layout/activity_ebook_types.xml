@@ -9,27 +9,26 @@
     tools:context=".EbookCollectionActivity">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="700dp">
 
-        <!--Always try to enclose recycler views inside of a relative layout-->
+            <!--Always try to enclose recycler views inside of a relative layout-->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/id_EbookTypeRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp"/>
 
-            <!-- Bottom Navigation View other pages excluding home page-->
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottom_navigation_other_pages"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                app:menu="@menu/bottom_navigation_menu_other_pages"
-                app:itemIconTint="@color/material_dynamic_neutral80"
-                app:labelVisibilityMode="unlabeled"
-                app:itemTextColor="@color/colorAccent"
-                android:layout_alignParentBottom="true" />
-
+<!--            &lt;!&ndash; Bottom Navigation View other pages excluding home page&ndash;&gt;-->
+<!--            <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--                android:id="@+id/bottom_navigation_other_pages"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@android:color/white"-->
+<!--                app:menu="@menu/bottom_navigation_menu_other_pages"-->
+<!--                app:itemIconTint="@color/material_dynamic_neutral80"-->
+<!--                app:labelVisibilityMode="unlabeled"-->
+<!--                app:itemTextColor="@color/colorAccent"-->
+<!--                android:layout_alignParentBottom="true" />-->
         </RelativeLayout>
 
         <com.google.android.material.navigation.NavigationView
