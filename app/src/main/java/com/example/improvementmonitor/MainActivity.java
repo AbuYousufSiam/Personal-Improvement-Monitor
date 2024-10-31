@@ -19,7 +19,6 @@ import com.google.android.material.navigation.NavigationView;
 //Transitions and Fade in out Animation Imports
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.View;
 
 
 import java.util.Objects;
@@ -120,13 +119,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean handleNavigationItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.nav_home) {
+        if (item.getItemId() == R.id.nav_home_nav_menu) {
             bottomNavigationView.setSelectedItemId(R.id.home_scroll_view_action);
-        } else if (item.getItemId() == R.id.nav_notifications) {
+        } else if (item.getItemId() == R.id.nav_notifications_nav_menu) {
             bottomNavigationView.setSelectedItemId(R.id.action_notifications);
-        } else if (item.getItemId() == R.id.nav_explore) {
+        } else if (item.getItemId() == R.id.nav_explore_nav_menu) {
             bottomNavigationView.setSelectedItemId(R.id.action_explore);
-        } else if (item.getItemId() == R.id.nav_profile) {
+        } else if (item.getItemId() == R.id.nav_profile_nav_menu) {
             bottomNavigationView.setSelectedItemId(R.id.action_profile);
         } else if (item.getItemId() == R.id.nav_add_word) {
             startActivity(new Intent(MainActivity.this, AddWordActivity.class));

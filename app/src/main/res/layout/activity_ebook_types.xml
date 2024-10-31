@@ -7,31 +7,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EbookCollectionActivity">
-        <RelativeLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_other_pages"
             android:layout_width="match_parent"
-            android:layout_height="700dp">
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:titleTextColor="@color/material_dynamic_secondary20"
+            app:subtitleTextColor="@color/material_dynamic_secondary95"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
-            <!--Always try to enclose recycler views inside of a relative layout-->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/id_EbookTypeRecyclerView"
+        <!-- Main content layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_other_pages">
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp"/>
+                android:layout_height="720dp">
 
-<!--            &lt;!&ndash; Bottom Navigation View other pages excluding home page&ndash;&gt;-->
-<!--            <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--                android:id="@+id/bottom_navigation_other_pages"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@android:color/white"-->
-<!--                app:menu="@menu/bottom_navigation_menu_other_pages"-->
-<!--                app:itemIconTint="@color/material_dynamic_neutral80"-->
-<!--                app:labelVisibilityMode="unlabeled"-->
-<!--                app:itemTextColor="@color/colorAccent"-->
-<!--                android:layout_alignParentBottom="true" />-->
-        </RelativeLayout>
+                <!--Always try to enclose recycler views inside of a relative layout-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/id_EbookTypeRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="4dp"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.navigation.NavigationView
+    <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view_other_pages"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

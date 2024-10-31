@@ -44,7 +44,7 @@ public class EbookTypeAdapter extends RecyclerView.Adapter<EbookTypeAdapter.ebVi
     @NonNull
     @Override
     public ebViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.act_book_type, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_book_type, parent, false);
         return new ebViewHolder(view);
     }
 
