@@ -27,5 +27,6 @@
     <string name="str_book_type">Siam Showdagor</string>
     <string name="str_book_type_description">Siam Showdagor is the best Java Developer of Batch 10 CSE JnU</string>
     <string name="str_image_of_book_type">Book Type Description</string>
+    <string name="subcategory_name">Subcategory Name</string>
 </resources>
 

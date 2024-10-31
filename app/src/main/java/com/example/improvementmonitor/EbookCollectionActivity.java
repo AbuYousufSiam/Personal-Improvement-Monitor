@@ -21,10 +21,8 @@ import java.util.Objects;
 
 public class EbookCollectionActivity extends AppCompatActivity {
 
-
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
-
 
     private RecyclerView ebookTypeRecyclerView;
     private EbookTypeAdapter adp_EbookTypeAdapter;
@@ -59,8 +57,10 @@ public class EbookCollectionActivity extends AppCompatActivity {
         ebookTypeRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Load ebook data into the RecyclerView
-        populateEbookData();
+//        populateEbookData();
 
+        // Initialize and set up data
+        lst_Ebook_itemList = generateEbookItems();
         // Set up adapter with data -- see the usages section after this files main class announcing -line 15 approximately
         adp_EbookTypeAdapter = new EbookTypeAdapter(this, lst_Ebook_itemList);
         ebookTypeRecyclerView.setAdapter(adp_EbookTypeAdapter);
@@ -79,35 +79,45 @@ public class EbookCollectionActivity extends AppCompatActivity {
         }
     }
 
+
+    private List<EbookItem> generateEbookItems() {
+        List<EbookItem> items = new ArrayList<>();
+
+        // Example for Math category with subcategories
+        List<EbookItem> mathSubItems = new ArrayList<>();
+
+        mathSubItems.add(new EbookItem(R.drawable.ic_basic_math, "Basic Math", "Basic level Math"));
+        mathSubItems.add(new EbookItem(R.drawable.ic_intermediate_math, "Intermediate Math", "Intermediate level Math"));
+        mathSubItems.add(new EbookItem(R.drawable.ic_advanced_math, "Advanced Math", "Advanced level Math"));
+
+        // Main Math category with sub-items
+        EbookItem mathItem = new EbookItem(
+                                            R.drawable.ic_calculator, "Math", "Mathematics category",
+                                            R.drawable.ic_calculator, R.drawable.ic_calculator, R.drawable.ic_calculator);
+        mathItem.setSubItems(mathSubItems);
+
+        // Example for Physics category with subcategories
+        List<EbookItem> physicsSubItems = new ArrayList<>();
+        physicsSubItems.add(new EbookItem(R.drawable.ic_tuition_planner, "Classical Physics", "Introduction to Classical Physics"));
+        physicsSubItems.add(new EbookItem(R.drawable.ic_recycle, "Quantum Physics", "Quantum Mechanics basics"));
+
+        // Main Physics category with sub-items
+        EbookItem physicsItem = new EbookItem(
+                                            R.drawable.ic_repositories, "Physics", "Physics category",
+                                            R.drawable.ic_repositories, R.drawable.ic_repositories, R.drawable.ic_repositories);
+        physicsItem.setSubItems(physicsSubItems);
+
+        // Add main items to the list
+        items.add(mathItem);
+        items.add(physicsItem);
+
+        return items;
+    }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
-    }
-
-    private void populateEbookData() {
-        // Prepare data
-        //Dummy item cardview information one by one
-        lst_Ebook_itemList = new ArrayList<>();
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.ic_secure_messaging, "Secure Messaging Book", "This is the best biology book", R.drawable.ic_recycle, R.drawable.ic_repositories, R.drawable.biology_book));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.ic_secure_messaging, "Secure Messaging Book","This is the best biology book", R.drawable.ic_recycle, R.drawable.ic_repositories, R.drawable.biology_book));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.expense_ledger_pen, "Professional Expense Management", "This is best management book",R.drawable.ic_qr_code, R.drawable.ic_calculator, R.drawable.ic_weather));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.camera, "Photography Pro", "Best Photography book ever in history", R.drawable.ic_about, R.drawable.ic_tuition_planner, R.drawable.ic_event_countdown));
-        // Add more items as needed...
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.ic_repositories, "Advanced Biology", "In-depth exploration of biology concepts", R.drawable.ic_recycle, R.drawable.ic_calculator, R.drawable.ic_weather));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.ic_explore, "Finance Fundamentals", "Essential financial management principles", R.drawable.ic_qr_code, R.drawable.ic_about, R.drawable.ic_event_countdown));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.camera, "Mastering Photography", "Capture stunning images like a pro", R.drawable.ic_repositories, R.drawable.ic_explore, R.drawable.ic_calculator));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.biology_book, "Botany Basics", "Learn the essentials of plant biology", R.drawable.ic_about, R.drawable.ic_recycle, R.drawable.ic_event_countdown));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.ic_alarm_clock, "Expense Ledger Guide", "Track and manage your expenses", R.drawable.ic_calculator, R.drawable.ic_weather, R.drawable.ic_tuition_planner));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.camera, "Photography for Beginners", "Basic skills for photography enthusiasts", R.drawable.ic_qr_code, R.drawable.ic_about, R.drawable.ic_weather));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.ic_calculator, "Human Anatomy", "Detailed study of human body systems", R.drawable.ic_repositories, R.drawable.ic_recycle, R.drawable.ic_calculator));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.ic_mess_management, "Investment Guide", "Smart investment strategies", R.drawable.ic_event_countdown, R.drawable.ic_explore, R.drawable.ic_qr_code));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.camera, "Creative Photography", "Inspire creativity with photography", R.drawable.ic_calculator, R.drawable.ic_about, R.drawable.ic_repositories));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.ic_tuition_planner, "Ecology Insights", "Understanding ecosystems and habitats", R.drawable.ic_weather, R.drawable.ic_explore, R.drawable.ic_tuition_planner));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.expense_ledger_pen, "Personal Finance", "Manage and plan your finances effectively", R.drawable.ic_qr_code, R.drawable.ic_recycle, R.drawable.ic_calculator));
-        lst_Ebook_itemList.add(new EbookItem(R.drawable.camera, "Photographic Storytelling", "Tell stories through photographs", R.drawable.ic_tuition_planner, R.drawable.ic_event_countdown, R.drawable.ic_weather));
-        // Add more items as needed...
-
     }
 
     private boolean handleNavigationItemSelected(MenuItem item) {
