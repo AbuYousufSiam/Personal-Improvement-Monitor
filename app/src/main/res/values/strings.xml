@@ -23,5 +23,9 @@
     <string name="march_friday">March, Friday</string>
     <string name="_3_events">3 Events</string>
     <string name="task_management_">Task Management</string>
+    <string name="insert_icon_here">Insert Icon Here</string>
+    <string name="str_book_type">Siam Showdagor</string>
+    <string name="str_book_type_description">Siam Showdagor is the best Java Developer of Batch 10 CSE JnU</string>
+    <string name="str_image_of_book_type">Book Type Description</string>
 </resources>
 

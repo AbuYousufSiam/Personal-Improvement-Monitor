@@ -17,14 +17,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.example.improvementmonitor.QuizActivity" />
-
-        <activity android:name="com.example.improvementmonitor.DailyChallengeActivity" />
-
-        <activity android:name="com.example.improvementmonitor.AddWordActivity" />
-        <activity android:name="com.example.improvementmonitor.SettingsActivity" />
-        <activity android:name="com.example.improvementmonitor.HelpActivity" />
         <activity android:name="com.example.improvementmonitor.AboutActivity" />
+        <activity android:name="com.example.improvementmonitor.AddWordActivity" />
+        <activity android:name="com.example.improvementmonitor.DailyChallengeActivity" />
+        <activity android:name="com.example.improvementmonitor.EbookCollectionActivity" />
+        <activity android:name="com.example.improvementmonitor.ExploreActivity" />
+        <activity android:name="com.example.improvementmonitor.HelpActivity" />
+        <activity android:name="com.example.improvementmonitor.NotificationActivity" />
+        <activity android:name="com.example.improvementmonitor.ProfileActivity" />
+        <activity android:name="com.example.improvementmonitor.QuizActivity" />
+        <activity android:name="com.example.improvementmonitor.SettingsActivity" />
         <activity android:name="com.example.improvementmonitor.TaskManagementActivity" />
 
 
