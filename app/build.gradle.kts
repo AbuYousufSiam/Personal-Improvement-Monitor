@@ -38,6 +38,8 @@ dependencies {
     implementation(libs.support.annotations)
     implementation(libs.material)
     implementation(libs.drawerlayout)
+    implementation(libs.activity)
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
 
     // Add JUnit dependency for unit testing
     testImplementation(libs.junit)

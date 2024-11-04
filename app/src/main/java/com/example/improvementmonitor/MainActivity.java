@@ -127,8 +127,6 @@ public class MainActivity extends AppCompatActivity {
             bottomNavigationView.setSelectedItemId(R.id.action_explore);
         } else if (item.getItemId() == R.id.nav_profile_nav_menu) {
             bottomNavigationView.setSelectedItemId(R.id.action_profile);
-        } else if (item.getItemId() == R.id.nav_add_word) {
-            startActivity(new Intent(MainActivity.this, AddWordActivity.class));
         } else if (item.getItemId() == R.id.nav_settings) {
             startActivity(new Intent(MainActivity.this, SettingsActivity.class));
         } else if (item.getItemId() == R.id.nav_help) {

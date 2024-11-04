@@ -119,8 +119,6 @@ public class EbookCollectionActivity extends AppCompatActivity {
             startActivity(new Intent(EbookCollectionActivity.this, ExploreActivity.class));
         } else if (item.getItemId() == R.id.nav_profile_nav_menu) {
             startActivity(new Intent(EbookCollectionActivity.this, ProfileActivity.class));
-        } else if (item.getItemId() == R.id.nav_add_word) {
-            startActivity(new Intent(EbookCollectionActivity.this, AddWordActivity.class));
         } else if (item.getItemId() == R.id.nav_settings) {
             startActivity(new Intent(EbookCollectionActivity.this, SettingsActivity.class));
         } else if (item.getItemId() == R.id.nav_help) {
