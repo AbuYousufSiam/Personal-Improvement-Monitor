@@ -6,7 +6,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.grevocabularyapp.R;
+import com.example.improvementmonitor.R;
 
 public class AddWordActivity extends AppCompatActivity {
 

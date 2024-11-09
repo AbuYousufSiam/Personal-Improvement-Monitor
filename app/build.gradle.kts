@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.grevocabularyapp"
+    namespace = "com.example.improvementmonitor"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.grevocabularyapp"
+        applicationId = "com.example.improvementmonitor"
         minSdk = 26    // Set minSdk to 26 or higher
         //noinspection OldTargetApi
         targetSdk = 33
