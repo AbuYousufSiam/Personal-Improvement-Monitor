@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
@@ -7,29 +8,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name="com.ebook.UpdateActivity"
+            android:parentActivityName="com.ebook.BookActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.ebook.AddActivity"
+            android:exported="false"
+            android:label="Add Book in Database"
+            android:parentActivityName="com.ebook.BookActivity" />
+        <activity
+            android:name="com.ebook.BookActivity"
+            android:exported="false"
+            android:label="Book Collection Activity">
 
-        <!-- Main Activity -->
-        <activity android:name="com.example.improvementmonitor.MainActivity"
+        </activity> <!-- Main Activity -->
+        <activity
+            android:name="com.example.improvementmonitor.MainActivity"
             android:exported="true"> <!-- Add this line -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name="com.example.improvementmonitor.AboutActivity" />
-        <activity android:name="com.example.improvementmonitor.AddWordActivity" />
-        <activity android:name="com.example.improvementmonitor.DailyChallengeActivity" />
         <activity android:name="com.example.improvementmonitor.EbookCollectionActivity" />
         <activity android:name="com.example.improvementmonitor.ExploreActivity" />
         <activity android:name="com.example.improvementmonitor.HelpActivity" />
         <activity android:name="com.example.improvementmonitor.NotificationActivity" />
         <activity android:name="com.example.improvementmonitor.ProfileActivity" />
-        <activity android:name="com.example.improvementmonitor.QuizActivity" />
         <activity android:name="com.example.improvementmonitor.SettingsActivity" />
         <activity android:name="com.example.improvementmonitor.TaskManagementActivity" />
-
-
     </application>
 
 </manifest>

@@ -12,7 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ScrollView;
 
-import com.example.grevocabularyapp.R;
+import com.ebook.BookActivity;
+import com.example.improvementmonitor.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         CardView cardTaskManagement = findViewById(R.id.card_task_management);
         // Find the Ebook Collection Activity CardView
         CardView ebookCollection_activity = findViewById(R.id.card_ebook_collection);
+        // Find the Book Activity CardView
+        CardView book_activity_pck_ebook = findViewById(R.id.card_book_activity);
 
         // Set up the toolbar
         setSupportActionBar(findViewById(R.id.toolbar));
@@ -108,6 +111,22 @@ public class MainActivity extends AppCompatActivity {
                 navigateToEbookCollectionActivity();
             }
         });
+
+        // Set an onClickListener on the EbookCollectionActivity CardView
+        book_activity_pck_ebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigateToBookActivity();
+            }
+        });
+
+        // Set an onClickListener on the EbookCollectionActivity CardView
+//        book_activity_pck_calculator.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                navigateToCalculatorActivity();
+//            }
+//        });
     }
 
     @Override
@@ -127,8 +146,6 @@ public class MainActivity extends AppCompatActivity {
             bottomNavigationView.setSelectedItemId(R.id.action_explore);
         } else if (item.getItemId() == R.id.nav_profile_nav_menu) {
             bottomNavigationView.setSelectedItemId(R.id.action_profile);
-        } else if (item.getItemId() == R.id.nav_add_word) {
-            startActivity(new Intent(MainActivity.this, AddWordActivity.class));
         } else if (item.getItemId() == R.id.nav_settings) {
             startActivity(new Intent(MainActivity.this, SettingsActivity.class));
         } else if (item.getItemId() == R.id.nav_help) {
@@ -165,6 +182,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
 
+    }
+
+    private void navigateToBookActivity() {
+
+        Intent intent = new Intent(MainActivity.this, BookActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
+
+    }
+
+    private void navigateToCalculatorActivity() {
+//        Intent intent = new Intent(MainActivity.this, CalculatorActivity.class);
+//        startActivity(intent);
+//        overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
     }
 
     @Override

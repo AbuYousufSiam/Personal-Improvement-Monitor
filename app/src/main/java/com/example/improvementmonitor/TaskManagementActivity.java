@@ -7,7 +7,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.grevocabularyapp.R;
+import com.example.improvementmonitor.R;
 
 public class TaskManagementActivity extends AppCompatActivity {
     @Override
