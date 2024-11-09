@@ -3,7 +3,7 @@ package com.example.improvementmonitor;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.grevocabularyapp.R;
+import com.example.improvementmonitor.R;
 public class ProfileActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {

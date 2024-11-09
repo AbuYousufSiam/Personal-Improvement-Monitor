@@ -10,6 +10,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name="com.ebook.UpdateActivity"
+            android:parentActivityName="com.ebook.BookActivity"
             android:exported="false" />
         <activity
             android:name="com.ebook.AddActivity"
@@ -18,23 +19,18 @@
             android:parentActivityName="com.ebook.BookActivity" />
         <activity
             android:name="com.ebook.BookActivity"
-            android:exported="true"
-            android:label="Ebook Collection">
+            android:exported="false"
+            android:label="Book Collection Activity">
+
+        </activity> <!-- Main Activity -->
+        <activity
+            android:name="com.example.improvementmonitor.MainActivity"
+            android:exported="true"> <!-- Add this line -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Main Activity -->
-        <activity
-            android:name="com.example.improvementmonitor.MainActivity"
-            android:exported="false"> <!-- Add this line -->
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity android:name="com.example.improvementmonitor.AboutActivity" />
         <activity android:name="com.example.improvementmonitor.EbookCollectionActivity" />

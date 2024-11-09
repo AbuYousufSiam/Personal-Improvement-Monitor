@@ -7,25 +7,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.example.grevocabularyapp.R;
+import com.example.improvementmonitor.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class BookActivity extends AppCompatActivity {
     RecyclerView book_recyclerView;
     FloatingActionButton add_book_btn;
-    SwipeRefreshLayout swipeRefreshLayout;
 
     BookDatabaseHelper myDB;
     ArrayList<String>book_id, book_title, book_author, book_pages;
@@ -36,8 +32,18 @@ public class BookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
+        // Initialize UI components
+//        drawerLayout = findViewById(R.id.drawer_layout_other_pages);
+
+        // Set up the toolbar
+        setSupportActionBar(findViewById(R.id.toolbar_other_pages));
+
+        // Set title and subtitle next to the hamburger icon
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Book Activity Package");
+        Objects.requireNonNull(getSupportActionBar()).setSubtitle("Explore Books");
+
         book_recyclerView = findViewById(R.id.s_book_recyclerview);
-        swipeRefreshLayout =(SwipeRefreshLayout)findViewById(R.id.swiperlayout);
+
         add_book_btn = findViewById(R.id.add_book_float);
         add_book_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,15 +66,6 @@ public class BookActivity extends AppCompatActivity {
         book_recyclerView.setAdapter(customAdapter);
         book_recyclerView.setLayoutManager(new LinearLayoutManager(BookActivity.this));
 
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                myDB.readAllData();
-                storeDataInArrays();
-                customAdapter.notifyItemInserted();
-                swipeRefreshLayout.setRefreshing(false);
-            }
-        });
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -89,6 +86,11 @@ public class BookActivity extends AppCompatActivity {
         if(cursor.getCount() == 0){
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
         }else {
+            book_id.clear();
+            book_title.clear();
+            book_author.clear();
+            book_pages.clear();
+
             while(cursor.moveToNext()){
                 book_id.add(cursor.getString(0));
                 book_title.add(cursor.getString(1));
@@ -97,5 +99,18 @@ public class BookActivity extends AppCompatActivity {
             }
         }
         cursor.close();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Clear existing data and reload from database
+        book_id.clear();
+        book_title.clear();
+        book_author.clear();
+        book_pages.clear();
+
+        storeDataInArrays();
+        customAdapter.notifyDataSetChanged();
     }
 }

@@ -5,24 +5,18 @@
     android:id="@+id/main2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="30dp"
     tools:context="com.ebook.AddActivity">
 
-
-    <Button
-        android:id="@+id/update_book_button"
-        android:layout_width="303dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/update"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pages_input2" />
-
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_other_pages"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/olive_drab"
+        app:titleTextColor="@color/material_dynamic_secondary20"
+        app:subtitleTextColor="@color/material_dynamic_secondary95"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 
     <EditText
@@ -65,5 +59,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/author_input2"
         app:layout_constraintVertical_bias="0.01" />
+
+
+    <Button
+        android:id="@+id/update_book_button"
+        android:layout_width="303dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/update"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pages_input2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

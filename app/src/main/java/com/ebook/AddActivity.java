@@ -4,12 +4,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.grevocabularyapp.R;
+import com.example.improvementmonitor.R;
 
 public class AddActivity extends AppCompatActivity {
     EditText title_input, author_input, pages_input;
@@ -34,6 +33,10 @@ public class AddActivity extends AppCompatActivity {
 
                 BookDatabaseHelper my_db = new BookDatabaseHelper(AddActivity.this);
                 my_db.addBook(title, author, pagesStr);
+
+                // Finish with RESULT_OK
+                setResult(RESULT_OK);
+                finish();
             }
         });
     }

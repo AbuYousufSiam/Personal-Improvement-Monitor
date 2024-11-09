@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.navigation.NavigationView;
 
 
-import com.example.grevocabularyapp.R;
+import com.example.improvementmonitor.R;
 
 import java.util.ArrayList;
 import java.util.List;

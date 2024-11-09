@@ -3,14 +3,14 @@ plugins {
 }
 
 android {
-    namespace = "com.example.grevocabularyapp"
-    compileSdk = 34
+    namespace = "com.example.improvementmonitor"
+    compileSdk = 35 // Compile sdk is 1 greater than target sdk
 
     defaultConfig {
-        applicationId = "com.example.grevocabularyapp"
+        applicationId = "com.example.improvementmonitor"
         minSdk = 26    // Set minSdk to 26 or higher
         //noinspection OldTargetApi
-        targetSdk = 33
+        targetSdk = 34 //Android 14
         versionCode = 1
         versionName = "1.0"
 
