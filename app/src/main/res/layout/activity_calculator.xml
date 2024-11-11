@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainCalculator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.im.calculator.CalculatorActivity">
+
+
+    <LinearLayout
+        android:id="@+id/calculatorButtonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/button_c"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:background="@drawable/rounded_button"
+                android:text="@string/c"
+                android:textSize="32sp"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/button_bracketOpen"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:text="@string/bracketOpen"
+                android:background="@drawable/rounded_button"
+                android:textSize="32sp"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/button_bracketClose"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:background="@drawable/rounded_button"
+                android:text="@string/bracketClose"
+                android:textSize="32sp"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/button_divide"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:background="@drawable/rounded_button"
+                android:text="@string/divide_forwardSlash"
+                android:textSize="32sp"
+                android:textColor="#FFFFFF" />
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -32,5 +32,9 @@
     <string name="number_of_pages">Number of Pages</string>
     <string name="book_name">Book Name</string>
     <string name="update">Update</string>
+    <string name="c">C</string>
+    <string name="bracketClose">)</string>
+    <string name="divide_forwardSlash">/</string>
+    <string name="bracketOpen">(</string>
 </resources>
 
