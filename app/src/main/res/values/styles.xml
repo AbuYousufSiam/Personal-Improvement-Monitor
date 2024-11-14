@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Normal button style with rounded background -->
+    <style name="CalcButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_rowWeight">1</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/rounded_button</item> <!-- Set rounded background -->
+        <item name="android:textColor">#FFFFFF</item> <!-- Set text color to white for contrast -->
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- Smaller button style with rounded background for the first row -->
+    <style name="CalcButtonSmall" parent="CalcButton">
+        <item name="android:layout_rowWeight">0.7</item> <!-- 60% of the normal size -->
+    </style>
+</resources>
+
+
