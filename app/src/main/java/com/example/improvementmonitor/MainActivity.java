@@ -16,6 +16,7 @@ import com.ebook.BookActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.im.calculator.CalculatorActivity;
+import com.im.calculator.ExtendedCalculatorActivity;
 
 //Transitions and Fade in out Animation Imports
 import android.view.animation.Animation;
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         CardView book_activity_pck_ebook = findViewById(R.id.card_book_activity);
         // Find the Book Activity CardView
         CardView calculator_pck_calculator = findViewById(R.id.card_calculator);
+        // Find the Book Activity CardView
+        CardView calculator_pck_calculator_extended = findViewById(R.id.card_calculator_extended);
 
         // Set up the toolbar
         setSupportActionBar(findViewById(R.id.toolbar));
@@ -129,6 +132,14 @@ public class MainActivity extends AppCompatActivity {
                 navigateToCalculatorActivity();
             }
         });
+
+        // Set an onClickListener on the CalculatorActivity CardView
+        calculator_pck_calculator_extended.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigateToExtendedCalculatorActivity();
+            }
+        });
     }
 
     @Override
@@ -196,6 +207,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void navigateToCalculatorActivity() {
         Intent intent = new Intent(MainActivity.this, CalculatorActivity.class);
+        startActivity(intent);
+//        overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
+    }
+
+    private void navigateToExtendedCalculatorActivity() {
+        Intent intent = new Intent(MainActivity.this, ExtendedCalculatorActivity.class);
         startActivity(intent);
 //        overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
     }

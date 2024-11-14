@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#fff">
+
+
+    <!-- Calculation Display Area -->
+    <TextView
+        android:id="@+id/calculate_textview"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:text=""
+        android:textSize="24sp"
+        android:textColor="#000"
+        android:gravity="end"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Result Display Area -->
+    <TextView
+        android:id="@+id/result_textview"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text=""
+        android:textSize="36sp"
+        android:textColor="#000"
+        android:gravity="end"
+        android:layout_marginBottom="16dp"
+        android:padding="10dp"
+        android:background="#f0f0f0" />
+
+
+    <!-- Button Grid -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/button_grid"
+        android:layout_weight="0.7"
+        android:columnCount="4"
+        android:rowCount="6"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <!-- Row 1: √, %, ^, π (60% of normal size) -->
+        <Button
+            android:id="@+id/button_root"
+            style="@style/CalcButtonSmall"
+            android:textSize="24sp"
+            android:text="√" />
+        <Button
+            android:id="@+id/button_percent"
+            style="@style/CalcButtonSmall"
+            android:textSize="24sp"
+            android:text="%" />
+        <Button
+            android:id="@+id/button_power"
+            style="@style/CalcButtonSmall"
+            android:textSize="24sp"
+            android:text="^" />
+        <Button
+            android:id="@+id/button_pi"
+            style="@style/CalcButtonSmall"
+            android:textSize="24sp"
+            android:text="π" />
+
+        <!-- Row 2: AC, (, ), / -->
+        <Button
+            android:id="@+id/button_all_clear"
+            style="@style/CalcButton"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textSize="24sp"
+            android:text="AC" />
+        <Button
+            android:id="@+id/button_bracketOpen"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:text="(" />
+        <Button
+            android:id="@+id/button_bracketClose"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:text=")" />
+        <Button
+            android:id="@+id/button_divide"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:text="/" />
+
+        <!-- Row 3: 7, 8, 9, * -->
+        <Button
+            android:id="@+id/button_seven"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:text="7" />
+        <Button
+            android:id="@+id/button_eight"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:text="8" />
+        <Button
+            android:id="@+id/button_nine"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:text="9" />
+        <Button
+            android:id="@+id/button_multiply"
+            style="@style/CalcButton"
+            android:textSize="32sp"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:text="*" />
+
+        <!-- Row 4: 4, 5, 6, - -->
+        <Button
+            android:id="@+id/button_four"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:text="4" />
+        <Button
+            android:id="@+id/button_five"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:text="5" />
+        <Button
+            android:id="@+id/button_six"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:text="6" />
+        <Button
+            android:id="@+id/button_subtract"
+            style="@style/CalcButton"
+            android:textSize="32sp"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:text="-" />
+
+        <!-- Row 5: 1, 2, 3, + -->
+        <Button
+            android:id="@+id/button_one"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:text="1" />
+        <Button
+            android:id="@+id/button_two"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:text="2" />
+        <Button
+            android:id="@+id/button_three"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:text="3" />
+        <Button
+            android:id="@+id/button_addition"
+            style="@style/CalcButton"
+            android:textSize="32sp"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:text="+" />
+
+        <!-- Row 6: 0, dot, C, = -->
+        <Button
+            android:id="@+id/button_zero"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:text="0" />
+        <Button
+            android:id="@+id/button_dot"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:text="." />
+        <Button
+            android:id="@+id/button_c"
+            style="@style/CalcButton"
+            android:textSize="24sp"
+            android:backgroundTint="@android:color/black"
+            android:text="X" />
+        <Button
+            android:id="@+id/button_equal"
+            style="@style/CalcButton"
+            android:textSize="32sp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="=" />
+    </GridLayout>
+</LinearLayout>

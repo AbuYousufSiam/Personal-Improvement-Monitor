@@ -264,6 +264,7 @@
                             android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
+                                android:id="@+id/card_calculator_extended"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:elevation="0dp"
@@ -284,13 +285,13 @@
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_study_planner" />
+                                            android:src="@drawable/ic_calculator_extended" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="10dp"
-                                            android:text="Study Planner"
+                                            android:text="Extended Calculator"
                                             android:textColor="#595858"
                                             android:textSize="14sp" />
 
@@ -298,7 +299,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="2dp"
-                                            android:text="March, Friday"
+                                            android:text="More Functionalities"
                                             android:textColor="#595858"
                                             android:textSize="12sp" />
 
@@ -1464,13 +1465,13 @@
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             android:layout_marginTop="25dp"
-                                            android:src="@drawable/ic_habit_tracker" />
+                                            android:src="@drawable/ic_study_planner" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="10dp"
-                                            android:text="Habit Tracker"
+                                            android:text="Study Planner"
                                             android:textColor="#595858"
                                             android:textSize="14sp" />
 

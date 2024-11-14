@@ -11,6 +11,11 @@
         <activity
             android:name="com.im.calculator.CalculatorActivity"
             android:exported="false" />
+
+        <activity
+            android:name="com.im.calculator.ExtendedCalculatorActivity"
+            android:exported="false" />
+
         <activity
             android:name="com.ebook.UpdateActivity"
             android:exported="false"

@@ -41,6 +41,9 @@ dependencies {
     implementation(libs.activity)
     implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
     implementation ("com.faendir.rhino:rhino-android:1.5.2")
+    implementation ("org.mozilla:rhino:1.7.13")
+    implementation ("net.objecthunter:exp4j:0.4.8")
+
 
     // Add JUnit dependency for unit testing
     testImplementation(libs.junit)

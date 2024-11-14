@@ -39,5 +39,6 @@
     <string name="point_dot">.</string>
     <string name="ac">AC</string>
     <string name="zero">0</string>
+    <string name="syntax_error">Syntax Error</string>
 </resources>
 
