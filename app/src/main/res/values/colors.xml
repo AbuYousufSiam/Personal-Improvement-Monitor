@@ -11,6 +11,9 @@
     <color name="dark_olive_green">#556b2f</color>
     <color name="pale_green">#98fb98</color>
 
-    <!-- White Color -->
+    <!-- Black and White Color -->
+    <color name="black">#212121</color>
+    <color name="white">#FFFFFF</color>
+
     <color name="background_white">#FFFFFF</color>
 </resources>

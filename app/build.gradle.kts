@@ -39,6 +39,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.drawerlayout)
     implementation(libs.activity)
+//    implementation(libs.cardview)
+    implementation ("androidx.cardview:cardview:1.0.0")
+
     implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
     implementation ("com.faendir.rhino:rhino-android:1.5.2")
     implementation ("org.mozilla:rhino:1.7.13")

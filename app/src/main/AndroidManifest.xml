@@ -47,6 +47,9 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".TaskManagementActivity" />
+
+        <activity android:name="com.tracker.expense.ExpenseTrackerActivity" />
+
     </application>
 
 </manifest>

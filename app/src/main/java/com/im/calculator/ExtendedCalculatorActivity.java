@@ -18,6 +18,7 @@ public class ExtendedCalculatorActivity extends AppCompatActivity implements Vie
     private int openBracketsCount = 0;
     private boolean isResultShown = false; // Track if "=" was just pressed
 
+    private Button btnRoot, btnPercent, btnPower, btnPi;
     TextView solutionTv, resultTv;
 
     @Override
@@ -25,6 +26,20 @@ public class ExtendedCalculatorActivity extends AppCompatActivity implements Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator_extended);
 
+
+        // Initialize the new buttons
+        btnRoot = findViewById(R.id.button_root);
+        btnPercent = findViewById(R.id.button_percent);
+        btnPower = findViewById(R.id.button_power);
+        btnPi = findViewById(R.id.button_pi);
+
+        // Set onClick listeners for the new buttons
+        btnRoot.setOnClickListener(view -> handleRoot());
+        btnPercent.setOnClickListener(view -> handlePercent());
+        btnPower.setOnClickListener(view -> handlePower());
+        btnPi.setOnClickListener(view -> handlePi());
+
+        // A better way to handle these kind of works easily
         initializeViewsAndListeners();
 
         // Specific listeners for bracket buttons
@@ -83,7 +98,7 @@ public class ExtendedCalculatorActivity extends AppCompatActivity implements Vie
             dataToCalculate = "";
             openBracketsCount = 0;
             isResultShown = false; // Reset the flag
-        } else if (buttonText.equals("X")) {
+        } else if (buttonText.equals("x")) {
             if (dataToCalculate.length() > 0) {
                 dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length() - 1);
                 solutionTv.setText(dataToCalculate);
@@ -107,16 +122,25 @@ public class ExtendedCalculatorActivity extends AppCompatActivity implements Vie
     }
 
     private void appendToCalculation(String value) {
-        // Add implicit multiplication when opening bracket follows a number
-        if (value.equals("(") && dataToCalculate.length() > 0) {
+        // If the value is '(', '√', or 'π' and the last character is a digit or ')', add implicit multiplication
+        if ((value.equals("(") || value.equals("√") || value.equals(String.valueOf(Math.PI))) && dataToCalculate.length() > 0) {
             char lastChar = dataToCalculate.charAt(dataToCalculate.length() - 1);
-            if (Character.isDigit(lastChar)) {
-                dataToCalculate += "*"; // Implicit multiplication
+
+            // Check if last character is a digit or closing bracket ')'
+            if (Character.isDigit(lastChar) || lastChar == ')') {
+                dataToCalculate += "*"; // Add multiplication sign
             }
         }
+
+        // Append the current value (either '(', '√', 'π', or any other digit/operator)
         dataToCalculate += value;
+
+        // Update the TextView with the current calculation
         solutionTv.setText(dataToCalculate);
     }
+
+
+
 
     private void calculateResult(String dataToCalculate) {
         try {
@@ -128,6 +152,12 @@ public class ExtendedCalculatorActivity extends AppCompatActivity implements Vie
 
             try {
                 Scriptable scriptable = rhino.initStandardObjects();
+
+                // Process square root, pi, and power operations
+                formattedData = formattedData.replaceAll("√", "Math.sqrt")
+                        .replaceAll("π", String.valueOf(Math.PI))
+                        .replaceAll("\\^2", "**2");
+
                 result = rhino.evaluateString(scriptable, formattedData, "JavaScript", 1, null).toString();
             } finally {
                 Context.exit();
@@ -149,6 +179,7 @@ public class ExtendedCalculatorActivity extends AppCompatActivity implements Vie
             resultTv.setText("Error: Invalid Expression");
         }
     }
+
 
     private boolean isBracketsBalanced(String expression) {
         Stack<Character> stack = new Stack<>();
@@ -180,4 +211,75 @@ public class ExtendedCalculatorActivity extends AppCompatActivity implements Vie
         }
         return true;
     }
+
+//    // Method to handle square root operation
+//    private void handleRoot() {
+//        // Implement your logic for square root here
+//        // Example: Get the current input, calculate square root, and display result
+//        String currentInput = getCurrentInput(); // assuming you have a method to get current input
+//        try {
+//            double result = Math.sqrt(Double.parseDouble(currentInput));
+//            displayResult(result); // assuming you have a method to display results
+//        } catch (NumberFormatException e) {
+//            showError("Invalid Input"); // method to display error if needed
+//        }
+//    }
+    private void handleRoot() {
+        if (isResultShown) {
+            dataToCalculate = "√(" + resultTv.getText().toString() + ")";
+            isResultShown = false;
+        } else {
+            dataToCalculate += "√(";
+            openBracketsCount++;
+        }
+        solutionTv.setText(dataToCalculate);
+    }
+
+    // Method to handle percent operation
+    private void handlePercent() {
+        // Implement your logic for percent operation here
+        String currentInput = getCurrentInput();
+        try {
+            double result = Double.parseDouble(currentInput) / 100;
+            displayResult(result);
+        } catch (NumberFormatException e) {
+            showError("Invalid Input");
+        }
+    }
+
+    // Method to handle power operation (assuming power of 2)
+    private void handlePower() {
+        String baseInput = getCurrentInput();
+        try {
+            double base = Double.parseDouble(baseInput);
+            double result = Math.pow(base, 2); // Squaring the base (exponent of 2)
+            displayResult(result);
+        } catch (NumberFormatException e) {
+            showError("Invalid Input");
+        }
+    }
+
+    // Method to handle Pi (π) operation
+    private void handlePi() {
+        // Insert the value of Pi into the display
+        appendToCalculation(String.valueOf(Math.PI));
+        solutionTv.setText(dataToCalculate);
+        displayResult(Double.valueOf(solutionTv.getText().toString())); // assuming displayResult handles showing output
+    }
+
+    // Method to get the current input from display
+    private String getCurrentInput() {
+        return solutionTv.getText().toString();
+    }
+
+    // Method to display result in display TextView
+    private void displayResult(double result) {
+        resultTv.setText(String.valueOf(result));
+    }
+
+    // Method to display an error in display TextView
+    private void showError(String message) {
+        resultTv.setText(message);
+    }
+
 }

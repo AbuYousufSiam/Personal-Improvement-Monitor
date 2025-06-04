@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/calculate_textview"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="165dp"
         android:text=""
         android:textSize="24sp"
         android:textColor="#000"
@@ -22,7 +22,7 @@
     <TextView
         android:id="@+id/result_textview"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="115dp"
         android:text=""
         android:textSize="36sp"
         android:textColor="#000"
@@ -41,7 +41,7 @@
         android:columnCount="4"
         android:rowCount="6"
         android:orientation="horizontal"
-        android:padding="2dp">
+        android:padding="1dp">
 
         <!-- Row 1: √, %, ^, π (60% of normal size) -->
         <Button
@@ -57,8 +57,8 @@
         <Button
             android:id="@+id/button_power"
             style="@style/CalcButtonSmall"
-            android:textSize="24sp"
-            android:text="^" />
+            android:textSize="20sp"
+            android:text="^2" />
         <Button
             android:id="@+id/button_pi"
             style="@style/CalcButtonSmall"
@@ -173,8 +173,9 @@
             android:id="@+id/button_c"
             style="@style/CalcButton"
             android:textSize="24sp"
-            android:backgroundTint="@android:color/black"
-            android:text="X" />
+            android:backgroundTint="#B33E3E"
+            android:textAllCaps="false"
+            android:text="x" />
         <Button
             android:id="@+id/button_equal"
             style="@style/CalcButton"

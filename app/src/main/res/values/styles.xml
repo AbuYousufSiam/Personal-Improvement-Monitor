@@ -14,7 +14,7 @@
 
     <!-- Smaller button style with rounded background for the first row -->
     <style name="CalcButtonSmall" parent="CalcButton">
-        <item name="android:layout_rowWeight">0.7</item> <!-- 60% of the normal size -->
+        <item name="android:layout_rowWeight">0.9</item> <!-- 60% of the normal size -->
     </style>
 </resources>
 

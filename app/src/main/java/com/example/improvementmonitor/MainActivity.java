@@ -17,6 +17,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.im.calculator.CalculatorActivity;
 import com.im.calculator.ExtendedCalculatorActivity;
+import com.tracker.expense.ExpenseTrackerActivity;
+
 
 //Transitions and Fade in out Animation Imports
 import android.view.animation.Animation;
@@ -39,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         // Initialize UI elements
         drawerLayout = findViewById(R.id.drawer_layout);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        CardView cardExpenseTracker = findViewById(R.id.card_expense_tracker);
+
         // Load animations
         Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         Animation fadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
@@ -140,6 +145,15 @@ public class MainActivity extends AppCompatActivity {
                 navigateToExtendedCalculatorActivity();
             }
         });
+
+
+
+        cardExpenseTracker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigateToExpenseTracker();
+            }
+        });
     }
 
     @Override
@@ -216,6 +230,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 //        overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
     }
+
+    private void navigateToExpenseTracker() {
+        Intent intent = new Intent(MainActivity.this, ExpenseTrackerActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
+    }
+
 
     @Override
     protected void onResume() {
