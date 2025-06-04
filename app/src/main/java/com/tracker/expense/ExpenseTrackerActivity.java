@@ -36,7 +36,7 @@ public class ExpenseTrackerActivity extends AppCompatActivity {
 
         // Set total expenses (assumes utility or DB logic is implemented)
         double total = ExpenseUtils.getTotalExpenses(this); // Implement in utils/db layer
-        textTotalExpenses.setText("৳ " + total);
+        textTotalExpenses.setText("Amount = ৳ " + total);
 
         // Add Expense
         cardAddExpense.setOnClickListener(view -> {
