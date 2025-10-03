@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvWalletName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wallet_name"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvWalletTarget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/target_0" />
+
+    <TextView
+        android:id="@+id/tvWalletSaved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/saved_0" />
+
+    <Button
+        android:id="@+id/btnAddSaving"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_saving" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSavings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="8dp"/>
+</LinearLayout>

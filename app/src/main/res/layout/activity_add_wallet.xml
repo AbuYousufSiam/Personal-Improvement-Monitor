@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etWalletName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Wallet Name" />
+
+    <EditText
+        android:id="@+id/etWalletTarget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Target Amount"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnSaveWallet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Wallet" />
+
+</LinearLayout>

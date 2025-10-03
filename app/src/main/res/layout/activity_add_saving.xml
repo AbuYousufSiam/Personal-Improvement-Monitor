@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etSavingAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Saving Amount"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/etSavingNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Note (e.g. walked instead of bus)" />
+
+    <Button
+        android:id="@+id/btnSaveSaving"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Saving" />
+
+</LinearLayout>
