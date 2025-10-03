@@ -40,5 +40,10 @@
     <string name="ac">AC</string>
     <string name="zero">0</string>
     <string name="syntax_error">Syntax Error</string>
+    <string name="add_wallet">Add Wallet</string>
+    <string name="wallet_name">Wallet Name</string>
+    <string name="target_0">Target: 0</string>
+    <string name="saved_0">Saved: 0</string>
+    <string name="add_saving">Add Saving</string>
 </resources>
 
