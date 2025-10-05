@@ -1372,6 +1372,8 @@
                             android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
+
+                                android:id="@+id/card_wallets"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:elevation="0dp"
@@ -1398,7 +1400,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="10dp"
-                                            android:text="#######"
+                                            android:text="@string/digital_wallets"
                                             android:textColor="#595858"
                                             android:textSize="14sp" />
 
@@ -1406,7 +1408,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="2dp"
-                                            android:text="March, Friday"
+                                            android:text="@string/save_and_track_money"
                                             android:textColor="#595858"
                                             android:textSize="12sp" />
 
@@ -1415,7 +1417,7 @@
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="20dp"
                                             android:layout_marginBottom="15dp"
-                                            android:text="3 Events"
+                                            android:text="@string/futuristic_goals"
                                             android:textColor="#595858"
                                             android:textSize="12sp" />
 
