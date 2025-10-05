@@ -45,5 +45,8 @@
     <string name="target_0">Target: 0</string>
     <string name="saved_0">Saved: 0</string>
     <string name="add_saving">Add Saving</string>
+    <string name="digital_wallets">Digital Wallets</string>
+    <string name="save_and_track_money">Save and Track Money</string>
+    <string name="futuristic_goals">Futuristic Goals</string>
 </resources>
 

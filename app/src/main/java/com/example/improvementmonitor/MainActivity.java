@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         final ScrollView scrollView = findViewById(R.id.home_scroll_view);
 
-        // CardViews all objects in main layout
+        ///////////////////////// CardViews all objects in main layout /////////////////////////////
         // Find the Task Management CardView
         CardView cardTaskManagement = findViewById(R.id.card_task_management);
         // Find the Ebook Collection Activity CardView
@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         CardView calculator_pck_calculator = findViewById(R.id.card_calculator);
         // Find the Book Activity CardView
         CardView calculator_pck_calculator_extended = findViewById(R.id.card_calculator_extended);
+        // Find the Book Activity CardView
+        CardView walletOption = findViewById(R.id.card_wallets);
 
         // Set up the toolbar
         setSupportActionBar(findViewById(R.id.toolbar));
@@ -140,6 +142,12 @@ public class MainActivity extends AppCompatActivity {
                 navigateToExtendedCalculatorActivity();
             }
         });
+
+        walletOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { navigateToWalletActivity(); }
+        });
+
     }
 
     @Override
@@ -215,6 +223,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, ExtendedCalculatorActivity.class);
         startActivity(intent);
 //        overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
+    }
+
+    private void navigateToWalletActivity() {
+        Intent intent = new Intent(MainActivity.this, com.wallet.ui.WalletListActivity.class);
+        startActivity(intent);
     }
 
     @Override
