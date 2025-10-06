@@ -34,6 +34,10 @@
             android:exported="false"
             android:label="Book Collection Activity" />
 
+        <activity android:name="com.wallet.ui.SavingDetailActivity"
+            android:theme="@style/Theme.AppCompat.Dialog"/>
+
+
         <!-- Main App Activity -->
         <activity
             android:name=".MainActivity"

@@ -1,6 +1,7 @@
 package com.wallet.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.improvementmonitor.R;
 import com.wallet.model.SavingEntry;
+import com.wallet.ui.SavingDetailActivity;
 
 import java.util.List;
 
 public class SavingAdapter extends RecyclerView.Adapter<SavingAdapter.SavingViewHolder> {
+
     private Context context;
     private List<SavingEntry> savingList;
 
@@ -37,6 +40,13 @@ public class SavingAdapter extends RecyclerView.Adapter<SavingAdapter.SavingView
         holder.amount.setText("৳ " + entry.getAmount());
         holder.note.setText(entry.getNote() != null ? entry.getNote() : "");
         holder.date.setText(entry.getDate());
+
+        // Open SavingDetailActivity on item click
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, SavingDetailActivity.class);
+            intent.putExtra("saving_id", entry.getId());
+            context.startActivity(intent);
+        });
     }
 
     @Override

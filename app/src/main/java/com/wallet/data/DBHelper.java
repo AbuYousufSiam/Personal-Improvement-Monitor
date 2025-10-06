@@ -4,31 +4,25 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.ContentValues;
-
 import android.database.Cursor;
-
 
 import com.wallet.model.Wallet;
 import com.wallet.model.SavingEntry;
-
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
+
     private static final String DB_NAME = "savings_app.db";
     private static final int DB_VERSION = 1;
 
-
-    // Table names
     private static final String TABLE_WALLET = "wallet";
     private static final String TABLE_SAVINGS = "savings";
-
 
     public DBHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
-
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -38,7 +32,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 "target_amount REAL NOT NULL, " +
                 "saved_amount REAL DEFAULT 0" +
                 ")");
-
 
         db.execSQL("CREATE TABLE " + TABLE_SAVINGS + " (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -57,8 +50,10 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    // ------------------------------
+    // WALLET OPERATIONS
+    // ------------------------------
 
-    // --- Wallet operations ---
     public long addWallet(String name, double targetAmount) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -69,13 +64,13 @@ public class DBHelper extends SQLiteOpenHelper {
         return id;
     }
 
-
     public List<Wallet> getAllWallets() {
         List<Wallet> list = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery("SELECT id, name, target_amount, saved_amount FROM " + TABLE_WALLET + " ORDER BY id DESC", null);
+
         if (c != null) {
-            while (((android.database.Cursor) c).moveToNext()) {
+            while (c.moveToNext()) {
                 Wallet w = new Wallet(
                         c.getInt(0),
                         c.getString(1),
@@ -88,86 +83,138 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         db.close();
         return list;
-        }
-
-
-public Wallet getWalletById(int walletId) {
-    SQLiteDatabase db = this.getReadableDatabase();
-    Cursor c = db.rawQuery("SELECT id, name, target_amount, saved_amount FROM " + TABLE_WALLET + " WHERE id = ?", new String[]{String.valueOf(walletId)});
-    Wallet w = null;
-    if (c != null) {
-        if (c.moveToFirst()) {
-            w = new Wallet(c.getInt(0), c.getString(1), c.getDouble(2), c.getDouble(3));
-        }
-        c.close();
     }
-    db.close();
-    return w;
-}
 
+    public Wallet getWalletById(int walletId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT id, name, target_amount, saved_amount FROM " + TABLE_WALLET + " WHERE id = ?", new String[]{String.valueOf(walletId)});
+        Wallet wallet = null;
 
-// Recompute saved amount from savings table and update wallet.saved_amount column.
-public double recomputeSavedAmount(int walletId) {
-    double sum = 0;
-    SQLiteDatabase db = this.getReadableDatabase();
-    Cursor c = db.rawQuery("SELECT SUM(amount) FROM " + TABLE_SAVINGS + " WHERE wallet_id = ?", new String[]{String.valueOf(walletId)});
-    if (c != null) {
-        if (c.moveToFirst()) {
-            sum = c.isNull(0) ? 0 : c.getDouble(0);
+        if (c != null && c.moveToFirst()) {
+            wallet = new Wallet(c.getInt(0), c.getString(1), c.getDouble(2), c.getDouble(3));
+            c.close();
         }
-        c.close();
+        db.close();
+        return wallet;
     }
-// Update wallet saved_amount
-    SQLiteDatabase wdb = this.getWritableDatabase();
-    ContentValues cv = new ContentValues();
-    cv.put("saved_amount", sum);
-    wdb.update(TABLE_WALLET, cv, "id = ?", new String[]{String.valueOf(walletId)});
-    wdb.close();
-    db.close();
-    return sum;
-}
-// --- Savings operations ---
-public long addSaving(int walletId, double amount, String note) {
-    SQLiteDatabase db = this.getWritableDatabase();
-    ContentValues cv = new ContentValues();
-    cv.put("wallet_id", walletId);
-    cv.put("amount", amount);
-    cv.put("note", note);
-    long id = db.insert(TABLE_SAVINGS, null, cv);
-// Update stored saved_amount incrementally (also safe to call recomputeSavedAmount)
-    db.execSQL("UPDATE " + TABLE_WALLET + " SET saved_amount = saved_amount + ? WHERE id = ?", new Object[]{amount, walletId});
-    db.close();
-    return id;
-}
 
+    public double recomputeSavedAmount(int walletId) {
+        double total = 0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT SUM(amount) FROM " + TABLE_SAVINGS + " WHERE wallet_id = ?", new String[]{String.valueOf(walletId)});
 
-public List<SavingEntry> getSavingsForWallet(int walletId) {
-    List<SavingEntry> list = new ArrayList<>();
-    SQLiteDatabase db = this.getReadableDatabase();
-    Cursor c = db.rawQuery("SELECT id, wallet_id, amount, note, date FROM " + TABLE_SAVINGS + " WHERE wallet_id = ? ORDER BY id DESC", new String[]{String.valueOf(walletId)});
-    if (c != null) {
-        while (c.moveToNext()) {
-            SavingEntry s = new SavingEntry(
+        if (c != null) {
+            if (c.moveToFirst()) {
+                total = c.isNull(0) ? 0 : c.getDouble(0);
+            }
+            c.close();
+        }
+
+        SQLiteDatabase writableDb = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("saved_amount", total);
+        writableDb.update(TABLE_WALLET, cv, "id = ?", new String[]{String.valueOf(walletId)});
+        writableDb.close();
+        db.close();
+
+        return total;
+    }
+
+    // ------------------------------
+    // SAVINGS OPERATIONS
+    // ------------------------------
+
+    public long addSaving(int walletId, double amount, String note) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("wallet_id", walletId);
+        cv.put("amount", amount);
+        cv.put("note", note);
+
+        long id = db.insert(TABLE_SAVINGS, null, cv);
+
+        // Increment saved_amount in wallet table
+        db.execSQL("UPDATE " + TABLE_WALLET + " SET saved_amount = saved_amount + ? WHERE id = ?",
+                new Object[]{amount, walletId});
+
+        db.close();
+        return id;
+    }
+
+    public List<SavingEntry> getSavingsForWallet(int walletId) {
+        List<SavingEntry> list = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT id, wallet_id, amount, note, date FROM " + TABLE_SAVINGS +
+                " WHERE wallet_id = ? ORDER BY id DESC", new String[]{String.valueOf(walletId)});
+
+        if (c != null) {
+            while (c.moveToNext()) {
+                list.add(new SavingEntry(
+                        c.getInt(0),
+                        c.getInt(1),
+                        c.getDouble(2),
+                        c.getString(3),
+                        c.getString(4)
+                ));
+            }
+            c.close();
+        }
+        db.close();
+        return list;
+    }
+
+    public SavingEntry getSavingById(int savingId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT id, wallet_id, amount, note, date FROM " + TABLE_SAVINGS + " WHERE id = ?",
+                new String[]{String.valueOf(savingId)});
+
+        SavingEntry s = null;
+        if (c != null && c.moveToFirst()) {
+            s = new SavingEntry(
                     c.getInt(0),
                     c.getInt(1),
                     c.getDouble(2),
                     c.getString(3),
                     c.getString(4)
             );
-            list.add(s);
+            c.close();
         }
-        c.close();
+        db.close();
+        return s;
     }
-    db.close();
-    return list;
-}
 
+    public int updateSaving(int savingId, double newAmount, String newNote) {
+        SavingEntry oldEntry = getSavingById(savingId);
+        if (oldEntry == null) return 0;
 
-// Optional: delete wallet and its savings
-public int deleteWallet(int walletId) {
-    SQLiteDatabase db = this.getWritableDatabase();
-    int rows = db.delete(TABLE_WALLET, "id = ?", new String[]{String.valueOf(walletId)});
-    db.close();
-    return rows;
-}
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("amount", newAmount);
+        cv.put("note", newNote);
+
+        int rows = db.update(TABLE_SAVINGS, cv, "id = ?", new String[]{String.valueOf(savingId)});
+        db.close();
+
+        recomputeSavedAmount(oldEntry.getWalletId());
+        return rows;
+    }
+
+    public int deleteSaving(int savingId) {
+        SavingEntry s = getSavingById(savingId);
+        if (s == null) return 0;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        int rows = db.delete(TABLE_SAVINGS, "id = ?", new String[]{String.valueOf(savingId)});
+        db.close();
+
+        recomputeSavedAmount(s.getWalletId());
+        return rows;
+    }
+
+    public int deleteWallet(int walletId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int rows = db.delete(TABLE_WALLET, "id = ?", new String[]{String.valueOf(walletId)});
+        db.close();
+        return rows;
+    }
 }
