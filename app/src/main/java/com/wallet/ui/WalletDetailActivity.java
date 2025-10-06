@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,6 +26,8 @@ public class WalletDetailActivity extends AppCompatActivity {
     private DBHelper dbHelper;
     private SavingAdapter adapter;
     private int walletId;
+
+    private static final int REQUEST_SAVING_DETAIL = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,5 +71,18 @@ public class WalletDetailActivity extends AppCompatActivity {
         List<SavingEntry> savingList = dbHelper.getSavingsForWallet(walletId);
         adapter = new SavingAdapter(this, savingList);
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_SAVING_DETAIL && resultCode == RESULT_OK) {
+            boolean shouldRefresh = data != null && data.getBooleanExtra("refresh", false);
+            if (shouldRefresh) {
+                loadWalletDetails();
+                loadSavings();
+            }
+        }
     }
 }
