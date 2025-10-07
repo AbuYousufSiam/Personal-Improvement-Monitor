@@ -6,7 +6,7 @@
     android:id="@+id/drawer_layout_add_wallet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wallet.ui.AddWalletActivity">
+    tools:context="wallet.ui.AddWalletActivity">
 
     <!-- Main content area -->
     <androidx.constraintlayout.widget.ConstraintLayout

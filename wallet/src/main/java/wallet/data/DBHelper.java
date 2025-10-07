@@ -1,4 +1,4 @@
-package com.wallet.data;
+package wallet.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.content.ContentValues;
 import android.database.Cursor;
 
-import com.wallet.model.Wallet;
-import com.wallet.model.SavingEntry;
+import wallet.model.Wallet;
+import wallet.model.SavingEntry;
 
 import java.util.ArrayList;
 import java.util.List;

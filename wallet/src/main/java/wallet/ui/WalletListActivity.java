@@ -1,4 +1,4 @@
-package com.wallet.ui;
+package wallet.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.improvementmonitor.R;
-import com.wallet.adapter.WalletAdapter;
-import com.wallet.data.DBHelper;
-import com.wallet.model.Wallet;
+import wallet.adapter.WalletAdapter;
+import wallet.data.DBHelper;
+import wallet.model.Wallet;
 
 import java.util.List;
 

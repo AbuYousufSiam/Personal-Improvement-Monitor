@@ -34,7 +34,7 @@
             android:exported="false"
             android:label="Book Collection Activity" />
 
-        <activity android:name="com.wallet.ui.SavingDetailActivity"
+        <activity android:name="wallet.ui.SavingDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog"/>
 
 
@@ -59,10 +59,10 @@
         <activity android:name=".TaskManagementActivity" />
 
         <!-- Wallet Activities (New Feature) -->
-        <activity android:name="com.wallet.ui.WalletListActivity" />
-        <activity android:name="com.wallet.ui.AddWalletActivity" />
-        <activity android:name="com.wallet.ui.WalletDetailActivity" />
-        <activity android:name="com.wallet.ui.AddSavingActivity" />
+        <activity android:name="wallet.ui.WalletListActivity" />
+        <activity android:name="wallet.ui.AddWalletActivity" />
+        <activity android:name="wallet.ui.WalletDetailActivity" />
+        <activity android:name="wallet.ui.AddSavingActivity" />
 
     </application>
 

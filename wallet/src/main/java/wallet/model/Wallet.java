@@ -1,4 +1,4 @@
-package com.wallet.model;
+package wallet.model;
 
 public class Wallet {
     private int id;

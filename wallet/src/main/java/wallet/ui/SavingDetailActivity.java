@@ -1,4 +1,4 @@
-package com.wallet.ui;
+package wallet.ui;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -11,8 +11,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.improvementmonitor.R;
-import com.wallet.data.DBHelper;
-import com.wallet.model.SavingEntry;
+import wallet.data.DBHelper;
+import wallet.model.SavingEntry;
 
 public class SavingDetailActivity extends AppCompatActivity {
 

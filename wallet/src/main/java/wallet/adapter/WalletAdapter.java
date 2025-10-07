@@ -1,4 +1,4 @@
-package com.wallet.adapter;
+package wallet.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,9 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.improvementmonitor.R;
-import com.wallet.model.Wallet;
-import com.wallet.ui.WalletDetailActivity;
+import wallet.model.Wallet;
+import wallet.ui.WalletDetailActivity;
 
 import java.util.List;
 
