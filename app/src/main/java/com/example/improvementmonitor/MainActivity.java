@@ -226,8 +226,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void navigateToWalletActivity() {
-        Intent intent = new Intent(MainActivity.this, com.wallet.ui.WalletListActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(MainActivity.this, com.wallet.ui.WalletListActivity.class);
+        //startActivity(intent);
     }
 
     @Override
