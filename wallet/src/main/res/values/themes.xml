@@ -1,10 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.GREVocabularyApp" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.ImprovementMonitor" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorTertiary">#D31010</item>
     </style>
 
-    <style name="Theme.GREVocabularyApp" parent="Base.Theme.GREVocabularyApp" />
+    <style name="Theme.ImprovementMonitor" parent="Base.Theme.ImprovementMonitor" />
 </resources>

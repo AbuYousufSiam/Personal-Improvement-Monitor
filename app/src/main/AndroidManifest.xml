@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.improvementmonitor">
 
     <application
         android:allowBackup="true"
@@ -8,27 +9,60 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <!-- Main Activity -->
-        <activity android:name="com.example.improvementmonitor.MainActivity"
-            android:exported="true"> <!-- Add this line -->
+        <!-- Existing Activities -->
+        <activity
+            android:name="com.im.calculator.CalculatorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.im.calculator.ExtendedCalculatorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.ebook.UpdateActivity"
+            android:exported="false"
+            android:parentActivityName="com.ebook.BookActivity" />
+
+        <activity
+            android:name="com.ebook.AddActivity"
+            android:exported="false"
+            android:label="Add Book in Database"
+            android:parentActivityName="com.ebook.BookActivity" />
+
+        <activity
+            android:name="com.ebook.BookActivity"
+            android:exported="false"
+            android:label="Book Collection Activity" />
+
+        <activity android:name="wallet.ui.SavingDetailActivity"
+            android:theme="@style/Theme.AppCompat.Dialog"/>
+
+
+        <!-- Main App Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name="com.example.improvementmonitor.AboutActivity" />
-        <activity android:name="com.example.improvementmonitor.AddWordActivity" />
-        <activity android:name="com.example.improvementmonitor.DailyChallengeActivity" />
-        <activity android:name="com.example.improvementmonitor.EbookCollectionActivity" />
-        <activity android:name="com.example.improvementmonitor.ExploreActivity" />
-        <activity android:name="com.example.improvementmonitor.HelpActivity" />
-        <activity android:name="com.example.improvementmonitor.NotificationActivity" />
-        <activity android:name="com.example.improvementmonitor.ProfileActivity" />
-        <activity android:name="com.example.improvementmonitor.QuizActivity" />
-        <activity android:name="com.example.improvementmonitor.SettingsActivity" />
-        <activity android:name="com.example.improvementmonitor.TaskManagementActivity" />
+        <!-- Other Activities -->
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".EbookCollectionActivity" />
+        <activity android:name=".ExploreActivity" />
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".TaskManagementActivity" />
 
+        <!-- Wallet Activities (New Feature) -->
+        <activity android:name="wallet.ui.WalletListActivity" />
+        <activity android:name="wallet.ui.AddWalletActivity" />
+        <activity android:name="wallet.ui.WalletDetailActivity" />
+        <activity android:name="wallet.ui.AddSavingActivity" />
 
     </application>
 

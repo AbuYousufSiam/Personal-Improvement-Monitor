@@ -4,10 +4,10 @@ plugins {
 
 android {
     namespace = "com.example.improvementmonitor"
-    compileSdk = 34
+    compileSdk = 35 // Compile sdk is 1 greater than target sdk
 
     defaultConfig {
-        applicationId = "com.example.improvementmonitor"
+        applicationId = "com.example.grevocabularyapp"
         minSdk = 26    // Set minSdk to 26 or higher
         //noinspection OldTargetApi
         targetSdk = 33
@@ -38,6 +38,14 @@ dependencies {
     implementation(libs.support.annotations)
     implementation(libs.material)
     implementation(libs.drawerlayout)
+    implementation(libs.activity)
+
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
+    implementation ("com.faendir.rhino:rhino-android:1.5.2")
+    implementation ("org.mozilla:rhino:1.7.13")
+    implementation ("net.objecthunter:exp4j:0.4.8")
+    implementation(libs.firebase.firestore)
+
 
     // Add JUnit dependency for unit testing
     testImplementation(libs.junit)

@@ -13,8 +13,11 @@ import android.view.View;
 import android.widget.ScrollView;
 
 import com.example.improvementmonitor.R;
+import com.ebook.BookActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.im.calculator.CalculatorActivity;
+import com.im.calculator.ExtendedCalculatorActivity;
 
 //Transitions and Fade in out Animation Imports
 import android.view.animation.Animation;
@@ -43,11 +46,19 @@ public class MainActivity extends AppCompatActivity {
 
         final ScrollView scrollView = findViewById(R.id.home_scroll_view);
 
-        // CardViews all objects in main layout
+        ///////////////////////// CardViews all objects in main layout /////////////////////////////
         // Find the Task Management CardView
         CardView cardTaskManagement = findViewById(R.id.card_task_management);
         // Find the Ebook Collection Activity CardView
         CardView ebookCollection_activity = findViewById(R.id.card_ebook_collection);
+        // Find the Book Activity CardView
+        CardView book_activity_pck_ebook = findViewById(R.id.card_book_activity);
+        // Find the Book Activity CardView
+        CardView calculator_pck_calculator = findViewById(R.id.card_calculator);
+        // Find the Book Activity CardView
+        CardView calculator_pck_calculator_extended = findViewById(R.id.card_calculator_extended);
+        // Find the Book Activity CardView
+        CardView walletOption = findViewById(R.id.card_wallets);
 
         // Set up the toolbar
         setSupportActionBar(findViewById(R.id.toolbar));
@@ -108,6 +119,36 @@ public class MainActivity extends AppCompatActivity {
                 navigateToEbookCollectionActivity();
             }
         });
+
+        // Set an onClickListener on the EbookCollectionActivity CardView
+        book_activity_pck_ebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigateToBookActivity();
+            }
+        });
+
+        // Set an onClickListener on the CalculatorActivity CardView
+        calculator_pck_calculator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigateToCalculatorActivity();
+            }
+        });
+
+        // Set an onClickListener on the CalculatorActivity CardView
+        calculator_pck_calculator_extended.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigateToExtendedCalculatorActivity();
+            }
+        });
+
+        walletOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { navigateToWalletActivity(); }
+        });
+
     }
 
     @Override
@@ -127,6 +168,8 @@ public class MainActivity extends AppCompatActivity {
             bottomNavigationView.setSelectedItemId(R.id.action_explore);
         } else if (item.getItemId() == R.id.nav_profile_nav_menu) {
             bottomNavigationView.setSelectedItemId(R.id.action_profile);
+        } else if (item.getItemId() == R.id.nav_add_word) {
+            //startActivity(new Intent(MainActivity.this, AddWordActivity.class));
         } else if (item.getItemId() == R.id.nav_settings) {
             startActivity(new Intent(MainActivity.this, SettingsActivity.class));
         } else if (item.getItemId() == R.id.nav_help) {
@@ -163,6 +206,31 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
 
+    }
+
+    private void navigateToBookActivity() {
+
+        Intent intent = new Intent(MainActivity.this, BookActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
+
+    }
+
+    private void navigateToCalculatorActivity() {
+        Intent intent = new Intent(MainActivity.this, CalculatorActivity.class);
+        startActivity(intent);
+//        overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
+    }
+
+    private void navigateToExtendedCalculatorActivity() {
+        Intent intent = new Intent(MainActivity.this, ExtendedCalculatorActivity.class);
+        startActivity(intent);
+//        overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
+    }
+
+    private void navigateToWalletActivity() {
+        //Intent intent = new Intent(MainActivity.this, com.wallet.ui.WalletListActivity.class);
+        //startActivity(intent);
     }
 
     @Override

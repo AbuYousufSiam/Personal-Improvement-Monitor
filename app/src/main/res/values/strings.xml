@@ -27,6 +27,29 @@
     <string name="str_book_type">Siam Showdagor</string>
     <string name="str_book_type_description">Siam Showdagor is the best Java Developer of Batch 10 CSE JnU</string>
     <string name="str_image_of_book_type">Book Type Description</string>
+    <string name="add">Add</string>
+    <string name="author_name">Author Name</string>
+    <string name="number_of_pages">Number of Pages</string>
+    <string name="book_name">Book Name</string>
+    <string name="update">Update</string>
+    <string name="c">X</string>
+    <string name="bracketClose">)</string>
+    <string name="divide_forwardSlash">/</string>
+    <string name="bracketOpen">(</string>
+    <string name="point_dot">.</string>
+    <string name="ac">AC</string>
+    <string name="zero">0</string>
+    <string name="syntax_error">Syntax Error</string>
+    <string name="add_wallet">Add Wallet</string>
+    <string name="wallet_name">Wallet Name</string>
+    <string name="target_0">Target: 0</string>
+    <string name="saved_0">Saved: 0</string>
+    <string name="add_saving">Add Saving</string>
+    <string name="digital_wallets">Digital Wallets</string>
+    <string name="save_and_track_money">Save and Track Money</string>
+    <string name="futuristic_goals">Futuristic Goals</string>
+    <string name="wallet_details">Wallet Detail</string>
+    <string name="btn_text_save_wallet">Save New Wallet</string>
     <string name="subcategory_name">Subcategory Name</string>
 </resources>
 

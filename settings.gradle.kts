@@ -19,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "GRE Vocabulary App"
+rootProject.name = "Improvement Monitor"
 include(":app")
+include(":wallet")
