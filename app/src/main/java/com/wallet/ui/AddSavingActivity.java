@@ -50,4 +50,5 @@ public class AddSavingActivity extends AppCompatActivity {
             }
         });
     }
+    //This is a testing comment for pull requests checking in github.
 }
