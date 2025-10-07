@@ -43,7 +43,7 @@ public class AddSavingActivity extends AppCompatActivity {
             long id = dbHelper.addSaving(walletId, amount, note);
 
             if (id > 0) {
-                Toast.makeText(this, "Saving added!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Saving Added!", Toast.LENGTH_SHORT).show();
                 finish(); // go back to wallet detail
             } else {
                 Toast.makeText(this, "Failed to add saving", Toast.LENGTH_SHORT).show();
